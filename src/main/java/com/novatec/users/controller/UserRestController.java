@@ -18,22 +18,26 @@ public class UserRestController {
     @Autowired
     private ProfessorService professorService;
 
+    @CrossOrigin
     @GetMapping("/students")
     public List<Student> getAllStudents() {
         return studentService.getAllStudents();
     }
 
+    @CrossOrigin
     @GetMapping("/professors")
     public List<Professor> getProfessors(){
         return professorService.getAllProfessors();
     }
 
+    @CrossOrigin
     @PostMapping("/student")
     public Student createStudent(@RequestBody Student student){
         studentService.saveStudent(student);
         return student;
     }
 
+    @CrossOrigin
     @PostMapping("/professor")
     public  Professor createProfessor(@RequestBody Professor professor){
         professorService.saveProfessor(professor);
